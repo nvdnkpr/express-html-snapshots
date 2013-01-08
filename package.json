@@ -1,1 +1,24 @@
-
+{ 
+  "name": "express-html-snapshots",
+  "description": "Express HTML snapshots middleware",
+  "version": "0.0.1",
+  "dependencies": {
+    "coffee-script": "1.4.x",
+    "node.io": "0.4.x"
+  },
+  "devDependencies": {
+    "mocha": "1.6.x",
+    "expect.js": "0.1.x",
+    "zombie": "1.4.x"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "main": "express-html-snapshots.coffee",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/OpenifyIt/express-html-snapshots/raw/master/LICENSE"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  #main(ng-app='sample')
+    h1= title
+    #content(ng-view) Generated on server-side
+
+  script
+    function HomeController($scope){
+        $scope.message = 'Generated on client-side';
+    };
+
+    var module = angular.module('sample', []);
+    module.config(function($routeProvider, $locationProvider) {
+        $locationProvider.html5Mode(false).hashPrefix('!');
+        $routeProvider.
+            when('/home', {templateUrl: '/templates/home.html',   controller: HomeController}).
+            otherwise({redirectTo: '/home'});
+    });
+
+
