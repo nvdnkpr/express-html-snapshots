@@ -14,6 +14,10 @@
     "test": "make test"
   },
   "main": "express-html-snapshots.coffee",
+  "repository" : {
+    "type" : "git",
+    "url" : "git://github.com/OpenifyIt/express-html-snapshots.git"
+  },
   "licenses": [
     {
       "type": "MIT",
