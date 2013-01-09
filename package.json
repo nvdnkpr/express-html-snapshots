@@ -4,12 +4,11 @@
   "version": "0.0.1",
   "dependencies": {
     "coffee-script": "1.4.x",
-    "node.io": "0.4.x"
+    "zombie": "1.4.x"
   },
   "devDependencies": {
     "mocha": "1.6.x",
-    "expect.js": "0.1.x",
-    "zombie": "1.4.x"
+    "expect.js": "0.1.x"
   },
   "scripts": {
     "test": "make test"
