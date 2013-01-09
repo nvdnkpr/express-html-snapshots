@@ -19,7 +19,7 @@ app.configure(function(){
     app.use(express.logger('dev'));
     app.use(express.bodyParser());
     app.use(express.methodOverride());
-    app.use(expressHTMLSnapshots.middleware);
+    app.use(expressHTMLSnapshots.googlebotMiddleware);
     app.use(app.router);
     app.use(require('stylus').middleware(__dirname + '/public'));
     app.use(express.static(path.join(__dirname, 'public')));
