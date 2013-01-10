@@ -1,7 +1,7 @@
 { 
   "name": "express-html-snapshots",
   "description": "Express HTML snapshots middleware",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "dependencies": {
     "coffee-script": "1.4.x",
     "zombie": "1.4.x"
