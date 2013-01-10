@@ -14,7 +14,7 @@
     "pretest": "make install-samples",
     "test": "make test"
   },
-  "main": "sources/express-html-snapshots.coffee",
+  "main": "index.js",
   "repository" : {
     "type" : "git",
     "url" : "git://github.com/OpenifyIt/express-html-snapshots.git"
