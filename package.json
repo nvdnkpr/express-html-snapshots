@@ -1,7 +1,7 @@
 { 
   "name": "express-html-snapshots",
   "description": "Express HTML snapshots middleware",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "dependencies": {
     "coffee-script": "1.4.x",
     "zombie": "1.4.x"
@@ -11,7 +11,7 @@
     "expect.js": "0.1.x"
   },
   "scripts": {
-    "preinstall": "make install-samples",
+    "pretest": "make install-samples",
     "test": "make test"
   },
   "main": "sources/express-html-snapshots.coffee",
