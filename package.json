@@ -1,7 +1,26 @@
 { 
   "name": "express-html-snapshots",
   "description": "Express HTML snapshots middleware",
-  "version": "0.0.6",
+  "version": "0.0.7",
+  "maintainers":[
+    { 
+      "name": "Openify.it",
+      "url": "https://github.com/OpenifyIt"
+    }
+  ],
+  "contributors":[
+    {
+      "name": "Jacques-Olivier D. Bernier",
+      "url": "https://github.com/jackdbernier"
+    }
+  ],
+  "keywords": [
+    "express",
+    "html snapshots",
+    "middleware",
+    "googlebot",
+    "search engine"
+  ],
   "dependencies": {
     "coffee-script": "1.4.x",
     "zombie": "1.4.x"
