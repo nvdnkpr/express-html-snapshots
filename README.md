@@ -22,7 +22,7 @@ Otherwise it's really straight forward.
     
     app.configure(function(){
         // ...
-        app.use(expressHTMLSnapshots.googlebotMiddleware); // it must be placed before the app.router
+        app.use(expressHTMLSnapshots.middleware); // it must be placed before the app.router
         app.use(app.router);
         // ...
     });
