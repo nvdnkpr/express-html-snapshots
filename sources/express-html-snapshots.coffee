@@ -1,4 +1,3 @@
-
 Browser = require 'zombie'
 
 class ExpressHtmlSnapshots
@@ -8,8 +7,8 @@ class ExpressHtmlSnapshots
 
     middleware: (req, res, next) =>
         if req.query['_escaped_fragment_']
-            url = "#{req.protocol}://#{req.header('host')}?#{req._parsedUrl.path}"
-            @snapshot url, (err, html) =>
+            console.log req.query['_escaped_fragment_']
+            @snapshot @generateUrlFromRequest(req), (err, html) =>
                 if err
                     #In case of error, return the page as is
                     next()
@@ -19,8 +18,7 @@ class ExpressHtmlSnapshots
                 (req.headers['user-agent'].indexOf('Googlebot') >= 0 or
                 req.headers['user-agent'].indexOf('bingbot') >= 0 or
                 req.headers['user-agent'].indexOf('Yahoo! Slurp') >= 0)
-            url = "#{req.protocol}://#{req.get('host')}#{req.url}?#{req._parsedUrl.path}"
-            @snapshot url, (err, html) =>
+            @snapshot @generateUrlFromRequest(req), (err, html) =>
                 if err
                     #In case of error, return the page as is
                     next()
@@ -34,5 +32,16 @@ class ExpressHtmlSnapshots
         browser.runScripts = true
         browser.visit url, (err, browser) =>
             callback err, browser.html()
+
+    generateUrlFromRequest: (req) =>
+        url = ""
+        if req.query['_escaped_fragment_']
+            url = "#{req.protocol}://#{req.header('host')}/#!#{req.query['_escaped_fragment_']}?"
+            delete req.query['_escaped_fragment_']
+            for key of req.query
+                url += "#{key}=#{req.query[key]}&"
+        else
+            url = "#{req.protocol}://#{req.header('host')}#{req._parsedUrl.path}"
+        return url
 
 module.exports = new ExpressHtmlSnapshots()
