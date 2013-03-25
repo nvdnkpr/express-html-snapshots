@@ -18,19 +18,18 @@ You can take a look at the sample application (https://github.com/OpenifyIt/expr
 
 Otherwise it's really straight forward.
 
-    var expressHTMLSnapshots = require('express-html-snapshots');
+    expressHTMLSnapshots = require 'express-html-snapshots'
     
-    app.configure(function(){
-        // ...
-        app.use(expressHTMLSnapshots.middleware); // it must be placed before the app.router
-        app.use(app.router);
-        // ...
-    });
+    app.configure () ->
+        # ...
+        app.use expressHTMLSnapshots.middleware # it must be placed before the app.router
+        app.use app.router
+        # ...
     
 You can also use directly the snapshot function
 
-    var expressHTMLSnapshots = require('express-html-snapshots');
+    expressHTMLSnapshots = require 'express-html-snapshots'
     
-    expressHTMLSnapshots.snapshopt(url, function(err, html){
-        console.log(err, html);
-    });
+    expressHTMLSnapshots.snapshopt url, (err, html) ->
+        console.log err, html
+        # do awesome things with the snapshot
