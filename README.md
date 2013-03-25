@@ -33,3 +33,18 @@ You can also use directly the snapshot function
     expressHTMLSnapshots.snapshopt url, (err, html) ->
         console.log err, html
         # do awesome things with the snapshot
+
+## TODOS
+* Create static snapshot files
+* Serve a static snapshot if it exists
+* More doc
+* More tests
+* ...
+
+## Contributions
+Contributions are welcome! Make sure include tests with your pull request.
+
+##Issues
+If you find an issue, please specified the steps to reproduce it. If you can provide a script to reproduce the issue.
+
+Thanks
