@@ -6,18 +6,7 @@ class ExpressHtmlSnapshots
         @middleware req, res, next
 
     middleware: (req, res, next) =>
-        if req.query['_escaped_fragment_']
-            console.log req.query['_escaped_fragment_']
-            @snapshot @generateUrlFromRequest(req), (err, html) =>
-                if err
-                    #In case of error, return the page as is
-                    next()
-                else
-                    res.send html
-        else if req.headers['user-agent'] and
-                (req.headers['user-agent'].indexOf('Googlebot') >= 0 or
-                req.headers['user-agent'].indexOf('bingbot') >= 0 or
-                req.headers['user-agent'].indexOf('Yahoo! Slurp') >= 0)
+        if @shouldServeSnapshot req
             @snapshot @generateUrlFromRequest(req), (err, html) =>
                 if err
                     #In case of error, return the page as is
@@ -32,6 +21,13 @@ class ExpressHtmlSnapshots
         browser.runScripts = true
         browser.visit url, (err, browser) =>
             callback err, browser.html()
+
+    shouldServeSnapshot: (req) =>
+        return req.query['_escaped_fragment_'] or
+            ( req.headers['user-agent'] and
+            (req.headers['user-agent'].indexOf('Googlebot') >= 0 or
+            req.headers['user-agent'].indexOf('bingbot') >= 0 or
+            req.headers['user-agent'].indexOf('Yahoo! Slurp') >= 0))
 
     generateUrlFromRequest: (req) =>
         url = ""
