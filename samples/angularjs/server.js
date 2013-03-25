@@ -5,7 +5,7 @@ var express = require('express')
     , http = require('http')
     , path = require('path');
 
-var expressHTMLSnapshots = require('../../sources/express-html-snapshots');
+var expressHTMLSnapshots = require('../../lib/express-html-snapshots');
 
 var app = express();
 var expressServer = http.createServer(app);

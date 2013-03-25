@@ -7,14 +7,17 @@ class ExpressHtmlSnapshots
 
     middleware: (req, res, next) =>
         if @shouldServeSnapshot req
-            @snapshot @generateUrlFromRequest(req), (err, html) =>
-                if err
-                    #In case of error, return the page as is
-                    next()
-                else
-                    res.send html
+            @serveSnapshot req, res, next
         else
             next()
+
+    serveSnapshot: (req, res, next) =>
+        @snapshot @generateUrlFromRequest(req), (err, html) =>
+            if err
+                #In case of error, return the page as is
+                next()
+            else
+                res.send html
 
     snapshot: (url, callback) =>
         browser = new Browser()

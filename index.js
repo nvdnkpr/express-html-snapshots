@@ -1,2 +1,2 @@
 require('coffee-script');
-module.exports = require('./sources/express-html-snapshots');
+module.exports = require('./lib/express-html-snapshots');
