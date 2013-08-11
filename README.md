@@ -23,8 +23,8 @@ Otherwise it's really straight forward.
 
     app.configure(function(){
         // ...
-        app.use expressHTMLSnapshots.middleware
-        app.use app.router
+        app.use(expressHTMLSnapshots.middleware);
+        app.use(app.router);
         // ...
     });
 
@@ -33,7 +33,7 @@ You can also use directly the snapshot function
     var expressHTMLSnapshots = require('express-html-snapshots')
 
     expressHTMLSnapshots.snapshopt(url, function(err, html){
-        console.log err, html
+        console.log(err, html);
     });
 
 ## TODOS
