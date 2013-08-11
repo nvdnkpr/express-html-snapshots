@@ -32,6 +32,7 @@
     "jade": "latest"
   },
   "scripts": {
+    "pretest": "make build",
     "test": "make test",
     "prepublish": "make build"
   },

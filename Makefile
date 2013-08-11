@@ -1,5 +1,5 @@
 build:
-	coffee \
+	./node_modules/.bin/coffee \
 		--compile \
 		--bare \
 		--output ./build \
