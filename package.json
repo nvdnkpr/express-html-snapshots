@@ -2,13 +2,13 @@
   "name": "express-html-snapshots",
   "description": "Express HTML snapshots middleware",
   "version": "0.0.10",
-  "maintainers":[
+  "maintainers": [
     {
       "name": "Openify.it",
       "url": "https://github.com/OpenifyIt"
     }
   ],
-  "contributors":[
+  "contributors": [
     {
       "name": "Jacques-Olivier D. Bernier",
       "url": "https://github.com/jackdbernier"
@@ -29,7 +29,8 @@
     "mocha": "latest",
     "expect.js": "latest",
     "express": "latest",
-    "jade": "latest"
+    "jade": "latest",
+    "jasmine-node": "~1.11.0"
   },
   "scripts": {
     "pretest": "make build",
@@ -37,9 +38,9 @@
     "prepublish": "make build"
   },
   "main": "lib/express-html-snapshots.js",
-  "repository" : {
-    "type" : "git",
-    "url" : "git://github.com/OpenifyIt/express-html-snapshots.git"
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/OpenifyIt/express-html-snapshots.git"
   },
   "licenses": [
     {

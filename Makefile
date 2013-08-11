@@ -7,11 +7,9 @@ build:
 
 test:
 	@NODE_ENV=test \
-	./node_modules/.bin/mocha \
-		--recursive \
-		--reporter list \
-		--timeout 10000 \
-		--bail \
-		tests/*.test.js
+	./node_modules/.bin/jasmine-node \
+		--forceexit \
+		--verbose \
+		./tests
 
 .PHONY: build test
