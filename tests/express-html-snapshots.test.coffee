@@ -17,7 +17,6 @@ describe 'test express html snapshots', () ->
 
     it 'should render the website search engines using _escaped_fragment_', (done) ->
         url = 'http://localhost:3000/?_escaped_fragment_=%2Fhome&q=openify.it'
-        console.log url
         browser.visit url, (err) ->
             expect(err).not.to.be.ok()
             expect(browser.success).to.be.ok()

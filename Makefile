@@ -2,8 +2,8 @@ build:
 	./node_modules/.bin/coffee \
 		--compile \
 		--bare \
-		--output ./build \
-		./lib
+		--output . \
+		.
 
 test:
 	@NODE_ENV=test \
@@ -12,7 +12,6 @@ test:
 		--reporter list \
 		--timeout 10000 \
 		--bail \
-		tests/*.test.coffee \
-		--require coffee-script
+		tests/*.test.js
 
 .PHONY: build test
