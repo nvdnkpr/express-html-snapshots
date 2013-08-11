@@ -1,7 +1,7 @@
 {
   "name": "express-html-snapshots",
   "description": "Express HTML snapshots middleware",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "maintainers": [
     {
       "name": "Openify.it",
