@@ -1,7 +1,7 @@
 server = require '../samples/angularjs/server'
 Browser = require 'zombie'
 
-describe 'test express html snapshots', () ->
+describe 'end to end tests', () ->
     browser = null
     beforeEach (done) ->
         browser = new Browser()

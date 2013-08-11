@@ -5,12 +5,14 @@ routes = require './routes'
 http = require 'http'
 path = require 'path'
 
-expressHTMLSnapshots = require '../../'
+ExpressHTMLSnapshots = require '../../'
 
 app = express()
 expressServer = http.createServer app
 
 app.configure () ->
+    expressHTMLSnapshots = new ExpressHTMLSnapshots()
+
     app.set 'port', process.env.PORT || 3000
     app.set 'views', __dirname + '/views'
     app.set 'view engine', 'jade'

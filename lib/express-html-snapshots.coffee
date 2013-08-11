@@ -2,9 +2,8 @@ Browser = require 'zombie'
 
 class ExpressHtmlSnapshots
     constructor: () ->
-    googlebotMiddleware: (req, res, next) =>
-        #backward compatibility
-        @middleware req, res, next
+    googlebotMiddleware: () =>
+        @middleware arguments...
 
     middleware: (req, res, next) =>
         if @shouldServeSnapshot req
@@ -27,21 +26,21 @@ class ExpressHtmlSnapshots
             callback err, browser.html()
 
     shouldServeSnapshot: (req) =>
-        return req.query['_escaped_fragment_'] or
-            ( req.headers['user-agent'] and
-            (req.headers['user-agent'].indexOf('Googlebot') >= 0 or
-            req.headers['user-agent'].indexOf('bingbot') >= 0 or
-            req.headers['user-agent'].indexOf('Yahoo! Slurp') >= 0))
+        return req.query['_escaped_fragment_']? or
+            ( req.headers['user-agent']? and
+                /googlebot|bingbot|yahoo/i.test(req.headers['user-agent']))
+
 
     generateUrlFromRequest: (req) =>
         url = ""
-        if req.query['_escaped_fragment_']
-            url = "#{req.protocol}://#{req.header('host')}/#!#{req.query['_escaped_fragment_']}?"
+        if req.query['_escaped_fragment_']?
+            url = "#{req.protocol}://#{req.headers.host}#{req.path}#!#{req.query['_escaped_fragment_']}?"
             delete req.query['_escaped_fragment_']
             for key of req.query
                 url += "#{key}=#{req.query[key]}&"
+            url = url.replace /&$/g, ''
         else
-            url = "#{req.protocol}://#{req.header('host')}#{req._parsedUrl.path}"
+            url = "#{req.protocol}://#{req.headers.host}#{req.originalUrl}"
         return url
 
-module.exports = new ExpressHtmlSnapshots()
+module.exports = ExpressHtmlSnapshots
