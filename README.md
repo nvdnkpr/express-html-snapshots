@@ -10,6 +10,7 @@ Provides a useful middleware for express that allows heavy javascript web applic
 
 ## How to run tests
 
+    npm install
     npm test
 
 ## How to use
@@ -19,17 +20,17 @@ You can take a look at the sample application (https://github.com/OpenifyIt/expr
 Otherwise it's really straight forward.
 
     expressHTMLSnapshots = require 'express-html-snapshots'
-    
+
     app.configure () ->
         # ...
         app.use expressHTMLSnapshots.middleware # it must be placed before the app.router
         app.use app.router
         # ...
-    
+
 You can also use directly the snapshot function
 
     expressHTMLSnapshots = require 'express-html-snapshots'
-    
+
     expressHTMLSnapshots.snapshopt url, (err, html) ->
         console.log err, html
         # do awesome things with the snapshot

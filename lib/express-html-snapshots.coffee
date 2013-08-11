@@ -1,6 +1,7 @@
 Browser = require 'zombie'
 
 class ExpressHtmlSnapshots
+    constructor: () ->
     googlebotMiddleware: (req, res, next) =>
         #backward compatibility
         @middleware req, res, next

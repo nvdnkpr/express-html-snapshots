@@ -1,14 +1,15 @@
-REPORTER = list
-
-install-samples:
-	@ cd samples/angularjs; \
-	npm install \
+build:
+	coffee \
+		--compile \
+		--bare \
+		--output ./build \
+		./lib
 
 test:
 	@NODE_ENV=test \
 	./node_modules/.bin/mocha \
 		--recursive \
-		--reporter $(REPORTER) \
+		--reporter list \
 		--timeout 10000 \
 		--bail \
 		tests/*.test.coffee \
