@@ -5,7 +5,7 @@ routes = require './routes'
 http = require 'http'
 path = require 'path'
 
-expressHTMLSnapshots = require '../../lib/express-html-snapshots'
+expressHTMLSnapshots = require '../../'
 
 app = express()
 expressServer = http.createServer app

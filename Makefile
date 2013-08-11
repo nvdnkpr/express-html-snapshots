@@ -14,3 +14,5 @@ test:
 		--bail \
 		tests/*.test.coffee \
 		--require coffee-script
+
+.PHONY: build test

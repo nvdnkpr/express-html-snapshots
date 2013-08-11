@@ -35,7 +35,7 @@
     "test": "make test",
     "prepublish": "make build"
   },
-  "main": "index.js",
+  "main": "build/express-html-snapshots.js",
   "repository" : {
     "type" : "git",
     "url" : "git://github.com/OpenifyIt/express-html-snapshots.git"
