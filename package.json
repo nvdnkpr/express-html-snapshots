@@ -1,7 +1,7 @@
 {
   "name": "express-html-snapshots",
   "description": "Express HTML snapshots middleware",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "maintainers": [
     {
       "name": "Openify.it",
@@ -26,11 +26,9 @@
   },
   "devDependencies": {
     "coffee-script": "latest",
-    "mocha": "latest",
-    "expect.js": "latest",
     "express": "latest",
     "jade": "latest",
-    "jasmine-node": "~1.11.0"
+    "jasmine-node": "latest"
   },
   "scripts": {
     "pretest": "make build",
