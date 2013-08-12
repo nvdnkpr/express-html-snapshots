@@ -1,7 +1,6 @@
 require 'coffee-script'
 
 express = require 'express'
-routes = require './routes'
 http = require 'http'
 path = require 'path'
 
@@ -11,7 +10,11 @@ app = express()
 expressServer = http.createServer app
 
 app.configure () ->
-    expressHTMLSnapshots = new ExpressHTMLSnapshots()
+    options =
+        prefetchUrls: [
+            'http://localhost:3000/#!/home'
+        ]
+    expressHTMLSnapshots = new ExpressHTMLSnapshots options
 
     app.set 'port', process.env.PORT || 3000
     app.set 'views', __dirname + '/views'
@@ -23,7 +26,8 @@ app.configure () ->
     app.use app.router
     app.use express.static(path.join(__dirname, 'public'))
 
-app.get '/', routes.index
+app.get '/', (req, res) ->
+    res.render 'index', { title: 'Express' }
 
 module.exports.start = (callback) ->
     expressServer.listen app.get('port'), () ->

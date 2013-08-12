@@ -22,7 +22,9 @@
     "search engine"
   ],
   "dependencies": {
-    "zombie": "1.4.x"
+    "async": "~0.2.9",
+    "zombie": "~1.4.1",
+    "json-store": "0.0.1"
   },
   "devDependencies": {
     "coffee-script": "latest",

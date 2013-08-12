@@ -1,3 +1,4 @@
+ExpressHtmlSnapshots = require '../'
 server = require '../samples/angularjs/server'
 Browser = require 'zombie'
 
@@ -46,6 +47,16 @@ describe 'end to end tests', () ->
     it 'should render website for Yahoo! bot without _escaped_fragment_', (done) ->
         userAgent = 'Mozilla/5.0 (compatible; Yahoo! Slurp; http://help.yahoo.com/help/us/ysearch/slurp)'
         url = 'http://localhost:3000/'
+        browser.visit url, {userAgent: userAgent}, (err) ->
+            expect(err).toBeFalsy()
+            expect(browser.success).toBeTruthy()
+            expect(browser.statusCode).toEqual 200
+            expect(browser.text('#content')).toEqual 'Generated on client-side'
+            done()
+
+    it 'should render a preloaded content', (done) ->
+        userAgent = 'Mozilla/5.0 (compatible; Yahoo! Slurp; http://help.yahoo.com/help/us/ysearch/slurp)'
+        url = 'http://localhost:3000/#!/home'
         browser.visit url, {userAgent: userAgent}, (err) ->
             expect(err).toBeFalsy()
             expect(browser.success).toBeTruthy()
