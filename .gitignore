@@ -1,8 +1,6 @@
 snapshots.json
 node_modules
-npm-debug.log
+*.log
 .idea
-.env
 */node_modules
 .DS_Store
-*.js

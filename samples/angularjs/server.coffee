@@ -1,5 +1,3 @@
-require 'coffee-script'
-
 express = require 'express'
 http = require 'http'
 path = require 'path'
