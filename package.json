@@ -1,7 +1,7 @@
 {
   "name": "express-html-snapshots",
   "description": "Express HTML snapshots middleware",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "maintainers": [
     {
       "name": "Openify.it",
@@ -22,22 +22,21 @@
     "search engine"
   ],
   "dependencies": {
-    "async": "~0.2.9",
-    "zombie": "~1.4.1",
-    "json-store": "0.0.1"
+    "zombie": "~2.0.0",
+    "validator": "~1.5.1"
   },
   "devDependencies": {
     "coffee-script": "latest",
-    "express": "latest",
+    "jasmine-node": "latest",
     "jade": "latest",
-    "jasmine-node": "latest"
+    "express": "latest"
   },
   "scripts": {
     "pretest": "make build",
     "test": "make test",
     "prepublish": "make build"
   },
-  "main": "lib/express-html-snapshots.js",
+  "main": "build/index.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/OpenifyIt/express-html-snapshots.git"

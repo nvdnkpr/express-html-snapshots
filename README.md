@@ -6,7 +6,7 @@ Provides a useful middleware for express that allows heavy javascript web applic
 
 ## How to install
 
-    npm install express-html-snapshots
+    npm install --save express-html-snapshots
 
 ## How to run tests
 
@@ -19,34 +19,24 @@ You can take a look at the sample application (https://github.com/OpenifyIt/expr
 
 Otherwise it's really straight forward.
 
-    var expressHTMLSnapshots = require('express-html-snapshots')
-
     app.configure(function(){
         // ...
-        app.use(expressHTMLSnapshots.middleware);
+        app.use(require('express-html-snapshots').middleware);
         app.use(app.router);
         // ...
     });
 
-You can also use directly the snapshot function
-
-    var expressHTMLSnapshots = require('express-html-snapshots')
-
-    expressHTMLSnapshots.snapshopt(url, function(err, html){
-        console.log(err, html);
-    });
-
 ## TODOS
-* Create static snapshot files
+* Create static snapshots
 * Serve a static snapshot if it exists
 * More doc
-* More tests
-* ...
+* Extract HtmlSnapshot into a diffent package
+* End to end tests
 
 ## Contributions
-Contributions are welcome! Make sure include tests with your pull request.
+Contributions are welcome! Make sure to include tests with your pull request.
 
 ##Issues
-If you find an issue, please specified the steps to reproduce it. If you can provide a script to reproduce the issue.
+If you find an issue, please specified the steps to reproduce it. If you can provide a script to reproduce the issue, it's even better!.
 
 Thanks

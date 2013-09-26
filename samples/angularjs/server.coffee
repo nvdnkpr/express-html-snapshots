@@ -8,11 +8,6 @@ app = express()
 expressServer = http.createServer app
 
 app.configure () ->
-    options =
-        prefetchUrls: [
-            'http://localhost:3000/#!/home'
-        ]
-    expressHTMLSnapshots = new ExpressHTMLSnapshots options
 
     app.set 'port', process.env.PORT || 3000
     app.set 'views', __dirname + '/views'
@@ -20,7 +15,7 @@ app.configure () ->
     app.use express.favicon()
     app.use express.bodyParser()
     app.use express.methodOverride()
-    app.use expressHTMLSnapshots.middleware
+    app.use ExpressHTMLSnapshots.middleware
     app.use app.router
     app.use express.static(path.join(__dirname, 'public'))
 

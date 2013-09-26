@@ -1,16 +1,23 @@
-build:
+clean:
+	rm -rf build
+
+compile-coffee:
 	./node_modules/.bin/coffee \
 		--compile \
 		--bare \
-		--output ./lib \
+		--output ./build \
 		./src
 
-test:
+build: clean compile-coffee
+
+unit-test:
 	@NODE_ENV=test \
 	./node_modules/.bin/jasmine-node \
 		--forceexit \
 		--verbose \
 		--coffee \
-		./tests
+		./tests/unit-tests
 
-.PHONY: build test
+test: unit-test
+
+.PHONY: clean compile-coffee build unit-test test
