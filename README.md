@@ -2,6 +2,9 @@
 
 [![Build Status](https://travis-ci.org/OpenifyIt/express-html-snapshots.png?branch=master)](https://travis-ci.org/OpenifyIt/express-html-snapshots)
 
+[![Dependency Status](https://gemnasium.com/OpenifyIt/express-html-snapshots.png)](https://gemnasium.com/OpenifyIt/express-html-snapshots)
+
+
 Provides a useful middleware for express that allows heavy javascript web applications to be crawled by search engines.
 
 ## How to install
